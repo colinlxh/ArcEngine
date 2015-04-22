@@ -283,9 +283,61 @@ namespace WindowsFormsApplication1
 
         }
 
-       
+        //修改界面皮肤、风格
+        private void AlterSkin1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Black";
+        }
+
+        private void AlterSkin2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+        }
+
+        private void AlterSkin3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "DevExpress Dark Style";
+        }
+
+        private void AlterSkin4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
+        }
+
+        private void AlterSkin5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Seven Classic";
+        }
+
+        private void AlterStyle1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+        }
+
+        private void AlterStyle2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+        }
+
+        private void AlterStyle3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
+        }
+        //默认皮肤、风格
+        private void Default_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "DevExpress Style";
+        }
 
 
-
+        //状态栏经纬度、比例尺
+        private void axMapControl1_OnMouseMove(object sender, IMapControlEvents2_OnMouseMoveEvent e)
+        {
+            string XYTxt = "经度:" + e.mapX.ToString("#0.0000") + ",纬度:" + e.mapY.ToString("#0.0000") + "  比例尺:1:" + axMapControl1.MapScale.ToString("#0");
+            Lbl_XYScale.Caption = XYTxt;
+        }
     }
+
 }
+
